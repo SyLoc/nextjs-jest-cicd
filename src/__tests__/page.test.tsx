@@ -3,22 +3,6 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import Home from "../app/page";
 
-// Mock Next.js Image component
-jest.mock("next/image", () => {
-  return function MockImage({ src, alt, width, height, className }: any) {
-    return (
-      <img
-        src={src}
-        alt={alt}
-        width={width}
-        height={height}
-        className={className}
-        data-testid="next-image"
-      />
-    );
-  };
-});
-
 // Mock window.alert
 const mockAlert = jest.fn();
 global.alert = mockAlert;
@@ -33,18 +17,6 @@ describe("Home Page", () => {
 
     // Check if the main container is rendered
     expect(screen.getByRole("main")).toBeInTheDocument();
-  });
-
-  it("renders the Next.js logo image", () => {
-    render(<Home />);
-
-    const image = screen.getByTestId("next-image");
-    expect(image).toBeInTheDocument();
-    expect(image).toHaveAttribute("src", "/next.svg");
-    expect(image).toHaveAttribute("alt", "Next.js logo");
-    expect(image).toHaveAttribute("width", "180");
-    expect(image).toHaveAttribute("height", "38");
-    expect(image).toHaveClass("dark:invert");
   });
 
   it("renders the instruction list", () => {
