@@ -30,7 +30,7 @@ export default function Home() {
         <h1 className="text-2xl font-bold text-red-400">
           Test Nextjs-Jest-CICD
         </h1>
-        <p>Update from develop branch</p>
+        <p>Update from develop branch - latest</p>
 
         <Button onClick={() => alert("Hello")}>Click me</Button>
       </main>
