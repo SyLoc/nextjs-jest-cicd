@@ -1,0 +1,16 @@
+name: Validate PR Source
+
+on:
+  pull_request:
+    branches:
+      - release
+
+jobs:
+  block-unwanted-branches:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fail if source branch is not main
+        if: github.head_ref != 'main'
+        run: |
+          echo "❌ Only PRs from 'main' branch are allowed to merge into 'release'."
+          exit 1
