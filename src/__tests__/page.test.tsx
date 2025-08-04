@@ -5,14 +5,7 @@ import Home from "../app/page";
 
 // Mock Next.js Image component
 jest.mock("next/image", () => {
-  return function MockImage({
-    src,
-    alt,
-    width,
-    height,
-    priority,
-    className,
-  }: any) {
+  return function MockImage({ src, alt, width, height, className }: any) {
     return (
       <img
         src={src}
