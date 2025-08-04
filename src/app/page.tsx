@@ -28,7 +28,7 @@ export default function Home() {
         </ol>
 
         <h1 className="text-2xl font-bold text-red-400">
-          Test Nextjs-Jest-CICD
+          Test Nextjs-Jest-CICD - update
         </h1>
         <p>Update from develop branch</p>
 
